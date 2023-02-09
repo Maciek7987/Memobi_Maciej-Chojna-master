@@ -1,0 +1,349 @@
+@import "variables";
+
+.top {
+  display: flex;
+  width: 100%;
+  min-width: 330px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  @media (min-width: $small-laptop) {
+    padding-top: 110px;
+  }
+  @media (min-width: $laptop) {
+    width: 76vw;
+    min-width: 1053px;
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
+  @media (min-width: $small-desktop) {
+    width: 77.7vw;
+  }
+  &__title {
+    width: 330px;
+    font-size: 27px;
+    line-height: 126%;
+    text-align: center;
+    @media (min-width: $large-mobile) {
+      width: 400px;
+    }
+    @media (min-width: $large-tablet) {
+      width: 496px;
+      font-size: 36px;
+      line-height: 122%;
+      letter-spacing: -0.03em;
+    }
+    @media (min-width: $laptop) {
+      text-align: left;
+    }
+    @media (min-width: $small-desktop) {
+      height: 86px;
+    }
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  width: 330px;
+  gap: 55px;
+  margin: 60px auto;
+  @media (min-width: $large-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    width: 762px;
+    row-gap: 70px;
+    margin: 120px auto 108px;
+  }
+  @media (min-width: $laptop) {
+    grid-template-rows: repeat(2, 174px);
+    width: 76vw;
+    min-width: 1053px;
+    column-gap: 20px;
+  }
+  @media (min-width: $small-desktop) {
+    width: 62vw;
+  }
+  .element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    @media (min-width: $laptop) {
+      gap: 0;
+    }
+    &__top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 35px;
+      @media (min-width: $large-tablet) {
+        width: 100%;
+      }
+      @media (min-width: $laptop) {
+        flex-direction: row;
+        gap: 22px;
+      }
+      .subtitle {
+        font-size: 22px;
+        line-height: 141%;
+        text-align: center;
+        @media (min-width: $large-tablet) {
+          font-size: 24px;
+          line-height: 129%;
+        }
+      }
+      .icon {
+        height: 75px;
+        width: 90px;
+        border-radius: 35.4px;
+        &::before {
+          content: "";
+          display: block;
+          height: 75px;
+          width: 90px;
+          background-repeat: no-repeat;
+          background-position: 50%;
+        }
+      }
+    }
+    .firstEl .icon {
+      background-color: $violet-color;
+      &::before {
+        transform-origin: center;
+        background-image: url("../../images//icons/hourglass.svg");
+        animation: iconHourglass 2s 1s infinite;
+      }
+    }
+    .secondEl .icon {
+      position: relative;
+      background-color: $green-color;
+      svg {
+        position: absolute;
+        left: 33px;
+        top: 18px;
+        width: 37.78px;
+        height: 39.88px;
+        g path:nth-child(5) {
+          transform: translateX(100%);
+          animation: icoPhone 3s 2s infinite;
+        }
+        g path:nth-child(6) {
+          transform: translateX(100%);
+          animation: icoPhone 3s 1.9s infinite;
+        }
+      }
+    }
+    .thirdEl .icon {
+      position: relative;
+      background-color: $navy-blue-color;
+      svg {
+        position: absolute;
+        left: 22px;
+        top: 17px;
+        height: 42.96px;
+        width: 51.94px;
+        g path:nth-child(6) {
+          transform: translate(0, 21%);
+          stroke-dashoffset: 1889;
+          animation: text1 2s linear forwards infinite;
+        }
+        g path:nth-child(7) {
+          transform: translate(0, 44%);
+          stroke-dashoffset: 1889;
+          animation: text2 2s linear forwards infinite;
+        }
+        g path:nth-child(8) {
+          transform: translate(-14%, -26%);
+          animation: iconNote 2s linear forwards infinite;
+        }
+      }
+    }
+    .fourthEl {
+      width: 264px;
+      @media (min-width: $large-tablet) {
+        width: 100%;
+      }
+      .icon {
+        background-color: $orange-color;
+        &::before {
+          animation: iconStars 1s ease-in-out alternate-reverse infinite;
+          background-image: url("../../images//icons/stars.svg");
+        }
+      }
+    }
+    &__bottom {
+      .description {
+        font-size: 18px;
+        line-height: 139%;
+        text-align: center;
+        @media (min-width: $laptop) {
+          margin-left: 110px;
+          text-align: left;
+          .small {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.useApp {
+  display: flex;
+  width: 330px;
+  flex-direction: column;
+  gap: 67px;
+  margin: 0 auto 68px;
+  @media (min-width: 480px) {
+    width: calc(100vw - 30px);
+    max-width: 761px;
+  }
+  @media (min-width: $small-laptop) {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+    margin: 0 auto 120px;
+  }
+  @media (min-width: $large-laptop) {
+    gap: 7.23%;
+  }
+  @media (min-width: $desktop) {
+    gap: 12.9%;
+  }
+
+  &__picture {
+    width: 100%;
+    height: auto;
+    max-width: 761px;
+    @media (min-width: $small-laptop) {
+      width: 57%;
+      margin-left: 4%;
+    }
+    @media (min-width: $desktop) {
+      min-width: 891px;
+      margin-left: 2.8%;
+    }
+    .img360 {
+      display: none;
+      @media (max-width: 479px) {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .img1920 {
+      display: none;
+      @media (min-width: 480px) {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    width: 260px;
+    flex-direction: column;
+    margin: 0 auto;
+    @media (min-width: $large-tablet) {
+      width: 354.78px;
+    }
+    @media (min-width: $small-laptop) {
+      margin: 0;
+    }
+    @media (min-width: $small-desktop) {
+      width: 438.65px;
+    }
+    &.animation .vocabulary {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .vocabulary {
+      position: relative;
+      border-radius: 30px;
+      opacity: 0;
+      transition: $transition-shape-yellow;
+      &::before {
+        content: "";
+        position: absolute;
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+    }
+    .quetal {
+      width: 136.4121551513672px;
+      height: 33px;
+      align-self: flex-start;
+      background-color: $violet-color;
+      transform: translateX(-40%);
+      @media (min-width: $large-tablet) {
+        width: 186.01657104492188px;
+        height: 45px;
+      }
+      @media (min-width: $small-desktop) {
+        width: 206.69px;
+        height: 50px;
+      }
+      &::before {
+        left: 13.1444091796875px;
+        top: 6.837890625px;
+        width: 109.44417572021484px;
+        height: 23.459787368774414px;
+        background-image: url("../../images/quetal.svg");
+        @media (min-width: $large-tablet) {
+          left: 17.924209594726562px;
+          top: 9.324371337890625px;
+          width: 149.24205017089844px;
+          height: 31.990619659423828px;
+        }
+        @media (min-width: $small-desktop) {
+          left: 19.915771484375px;
+          top: 10.36041259765625px;
+          width: 165.82449340820312px;
+          height: 35.54513168334961px;
+        }
+      }
+    }
+    .hola {
+      width: 234.5080108642578px;
+      height: 33px;
+      align-self: flex-end;
+      background-color: $yellow-color;
+      transform: translateX(10%);
+      @media (min-width: $large-tablet) {
+        width: 319.78px;
+        height: 45px;
+      }
+      @media (min-width: $small-desktop) {
+        width: 355.315185546875px;
+        height: 50px;
+      }
+      &::before {
+        left: 16.16729736328125px;
+        top: 6.8375244140625px;
+        width: 204.708740234375px;
+        height: 23.76793670654297px;
+        background-image: url("../../images/hola.svg");
+        @media (min-width: $large-tablet) {
+          left: 22.046356201171875px;
+          top: 9.323944091796875px;
+          width: 279.1482849121094px;
+          height: 32.410823822021484px;
+        }
+        @media (min-width: $small-desktop) {
+          left: 24.495849609375px;
+          top: 10.35992431640625px;
+          width: 310.1647644042969px;
+          height: 36.012027740478516px;
+        }
+      }
+    }
+  }
+}

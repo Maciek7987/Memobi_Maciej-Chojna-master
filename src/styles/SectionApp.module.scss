@@ -1,0 +1,174 @@
+@import "variables";
+
+.wrapper {
+  display: flex;
+  width: calc(100vw - 30px);
+  min-width: 330px;
+  flex-direction: column;
+  gap: 55px;
+  margin: 0 auto 60px;
+  border-radius: 50px;
+  background-color: $yellow-color;
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    gap: 11.2px;
+  }
+  @media (min-width: $laptop) {
+    width: calc(100vw - 120px);
+  }
+  @media (min-width: $small-desktop) {
+    margin: 0 auto 70px;
+  }
+  .left {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 115px 167px 125px;
+    width: 299px;
+    margin: 75px auto 0;
+    @media (min-width: $large-mobile) {
+      grid-template-rows: 115px 160px 55px;
+      width: 400px;
+    }
+    @media (min-width: $large-tablet) {
+      grid-template-rows: 115px 176px 55px;
+      width: 405px;
+    }
+    @media (min-width: $small-laptop) {
+      margin: 144px auto 0;
+    }
+    @media (min-width: $large-laptop) {
+      margin: 144px auto 0 9.2%;
+    }
+    @media (min-width: $small-desktop) {
+      margin: 171px auto 0 13.5%;
+    }
+    &__logo {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      .img {
+        width: 115px;
+        height: 115px;
+      }
+    }
+    &__title {
+      width: 100%;
+      height: 102px;
+      margin: 35px auto 30px;
+      @media (min-width: $large-tablet) {
+        margin: 50px auto 40px;
+      }
+      .content {
+        font-size: 27px;
+        line-height: 126%;
+        text-align: center;
+        @media (min-width: $large-tablet) {
+          font-size: 36px;
+          line-height: 120%;
+        }
+      }
+    }
+    &__download {
+      display: flex;
+      width: 185.33px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 125px;
+      margin: 0 auto;
+      @media (min-width: $large-mobile) {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 11.2px;
+        padding-left: 10.5px;
+      }
+      @media (min-width: $large-tablet) {
+        padding-left: 0;
+      }
+    }
+  }
+  .right {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 356px);
+    width: 177.62px;
+    gap: 30.44px;
+    margin: 0 auto 75px;
+    @media (min-width: $large-mobile) {
+      grid-template-columns: repeat(2, 177.62px);
+      grid-template-rows: 1fr;
+      width: 412px;
+      gap: 58px;
+    }
+    @media (min-width: $tablet) {
+      gap: 11.2px;
+      margin: 0 auto calc(143px - 14px);
+    }
+    @media (min-width: $large-tablet) {
+      width: 380px;
+      gap: 24px;
+    }
+    @media (min-width: $small-laptop) {
+      grid-template-columns: repeat(2, 262.44px);
+      grid-template-rows: 526px;
+      width: 540px;
+      margin: 0 auto calc(143px - 36px);
+    }
+    @media (min-width: $large-laptop) {
+      gap: 10%;
+      margin: 0 auto calc(143px - 36px) 1.6%;
+    }
+    @media (min-width: $small-desktop) {
+      grid-template-columns: repeat(2, 284.44px);
+      grid-template-rows: 570px;
+      margin: 0 auto calc(170px - 49.3px) -5.4%;
+    }
+    &__phoneFirst {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: move $transition-phone 0.3s infinite alternate-reverse;
+      &:hover {
+        animation-play-state: paused;
+      }
+      @media (min-width: $large-mobile) {
+        top: 90px;
+      }
+      @media (min-width: $small-laptop) {
+        top: 54.65px;
+      }
+      @media (min-width: $small-desktop) {
+        top: 60.7px;
+      }
+      .img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__phoneSecond {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: move $transition-phone infinite alternate-reverse;
+      &:hover {
+        animation-play-state: paused;
+      }
+      @media (min-width: $tablet) {
+        top: -14px;
+      }
+      @media (min-width: $small-laptop) {
+        top: -36px;
+      }
+      @media (min-width: $small-desktop) {
+        top: -49.3px;
+      }
+      .img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
